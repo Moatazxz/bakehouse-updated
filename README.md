@@ -4,7 +4,6 @@ Bake House is a website for Keith Bakery home. It is a specialized pastry shop. 
 
 ### How To Run Website Locally:
 
-
 In your browser type the website url, or open the terminal and type: 
 ``` sh
 $ google-chrome https://mahaamin.github.io/BakeHouse/index.html
