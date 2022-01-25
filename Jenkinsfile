@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                echo 'hello from git'
+                echo 'hello from moataz  git'
             }
         }
     }
