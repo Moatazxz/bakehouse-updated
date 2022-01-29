@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+  labels:
+    app: myapp
+    tier: deploy
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        tier: deploy
+    spec:
+      containers:
+      - name: myapp
+        image: moatazxz/testJ
