@@ -32,7 +32,7 @@ pipeline {
       steps {
         configFileProvider ([configFile(fileId: 'k8s-config', variable: 'KUBE_CONF')]) {
         sh """
-           echo $KUBE_CONF 
+           cat $KUBE_CONF 
            
 
         """
