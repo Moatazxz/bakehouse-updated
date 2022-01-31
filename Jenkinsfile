@@ -36,7 +36,7 @@ stages {
               withCredentials([file(credentialsId: 'k8s_config', variable: 'KUBE_CONF')]) {
               sh """
                 cat $KUBE_CONF > $HOME/.kube/config
-                kubectl get po
+                kubectl get pod --kubeconfig=$KUBE_CONF
               """
               }
               
