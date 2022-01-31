@@ -21,7 +21,7 @@ pipeline {
 
        stage('export_serivce_acc') {
       steps {
-        configFileProvider ([configFile(fileId: '	k8s-config', variable: 'SERVICE_ACC')]) {
+        configFileProvider ([configFile(fileId: 'gcp-service-acc', variable: 'SERVICE_ACC')]) {
         sh """
         export GOOGLE_APPLICATION_CREDENTIALS=$SERVICE_ACC
         """
@@ -30,7 +30,7 @@ pipeline {
       }
     stage('Use_kube_confing') {
       steps {
-        configFileProvider ([configFile(fileId: '	gcp-service-acc', variable: 'KUBE_CONF')]) {
+        configFileProvider ([configFile(fileId: 'k8s-config', variable: 'KUBE_CONF')]) {
         sh """
            
            kubectl apply -f . --kubeconfig=$KUBE_CONF
