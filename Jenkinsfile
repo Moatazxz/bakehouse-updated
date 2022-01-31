@@ -36,6 +36,7 @@ pipeline {
         sh """
            cat $KUBE_CONF > /home/jenkins/.kube/config
            cat  /home/jenkins/.kube/config
+           chown -R jenkins: /home/jenkins/.kube/config
            kubectl get pod  
               
         """
