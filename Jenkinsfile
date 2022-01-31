@@ -33,7 +33,8 @@ pipeline {
         configFileProvider ([configFile(fileId: 'k8s-config', variable: 'KUBE_CONF')]) {
         sh """
            cat $KUBE_CONF > /home/jenkins/.kube/config
-          cat  /home/jenkins/.kube/config
+           cat  /home/jenkins/.kube/config
+           kubectl apply .    
         """
         }
         }
