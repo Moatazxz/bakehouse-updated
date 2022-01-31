@@ -24,7 +24,7 @@ pipeline {
         configFileProvider ([configFile(fileId: 'gcp-service-acc', variable: 'SERVICE_ACC')]) {
         sh """
         export GOOGLE_APPLICATION_CREDENTIALS=$SERVICE_ACC
-        echo ($GOOGLE_APPLICATION_CREDENTIALS)
+        
         
         """
         }
@@ -36,6 +36,7 @@ pipeline {
         sh """
            cat $KUBE_CONF > /home/jenkins/.kube/config
            cat  /home/jenkins/.kube/config
+           kubectl get pod  
               
         """
         }
