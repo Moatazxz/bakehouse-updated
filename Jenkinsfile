@@ -1,5 +1,5 @@
 pipeline {
-  agent {label 'agent'}
+  agent {label 'slave1'}
 stages {
 
       stage('Push images') {
