@@ -1,5 +1,5 @@
 pipeline {
-  agent {label 'jenkins-slave-jdk11'}
+  agent any
   stages {
     stage('Push images') {
       steps {
