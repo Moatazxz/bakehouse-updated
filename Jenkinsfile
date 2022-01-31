@@ -23,7 +23,7 @@ stages {
               script {
               withCredentials([file(credentialsId: 'sv_acc', variable: 'SERVICE_ACC')]) {
                 sh """
-                export GOOGLE_APPLICATION_CREDENTIALS=${SERVICE_ACC}
+                export GOOGLE_APPLICATION_CREDENTIALS=$SERVICE_ACC
                 """
               }
               
@@ -35,7 +35,7 @@ stages {
               script {
               withCredentials([file(credentialsId: 'k8s_config', variable: 'KUBE_CONF')]) {
               sh """
-                cat ${KUBE_CONF} > ${HOME}/.kube/config
+                cat $KUBE_CONF > $HOME/.kube/config
                 kubectl get po
               """
               }
