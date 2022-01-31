@@ -23,7 +23,7 @@ stages {
               script {
               withCredentials([file(credentialsId: 'sv_acc', variable: 'SERVICE_ACC')]) {
                 sh """
-                export GOOGLE_APPLICATION_CREDENTIALS=$SERVICE_ACC
+                export GOOGLE_APPLICATION_CREDENTIALS=${SERVICE_ACC}
                 """
               }
               
