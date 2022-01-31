@@ -34,7 +34,7 @@ pipeline {
         sh """
            cat $KUBE_CONF > /home/jenkins/.kube/config
            cat  /home/jenkins/.kube/config
-           kubectl apply .    
+           kubectl apply -f .    
         """
         }
         }
