@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: moatazxz/moviedb
+        image: moatazxz/moviedb:latest
         ports:
         - containerPort: 80
