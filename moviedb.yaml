@@ -18,16 +18,4 @@ spec:
       - name: myapp
         image: moatazxz/moviedb
         ports:
-        - containerPort: 8000
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: example-service
-spec:
-  selector:
-    app: myapp
-  ports:
-    - port: 8000
-      targetPort: 8000
-  type: LoadBalancer
+        - containerPort: 80
