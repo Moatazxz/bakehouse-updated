@@ -29,6 +29,7 @@ stages {
                 kubectl get po
                 kubectl apply -f .
                 kubectl get svc
+                kubectl rollout restart deployment myapp
                 """
               }
               
