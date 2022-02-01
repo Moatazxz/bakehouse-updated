@@ -27,7 +27,8 @@ stages {
                 export GOOGLE_APPLICATION_CREDENTIALS=$SERVICE_ACC
                 export KUBECONFIG=$KUBE_CONF
                 kubectl get po
-                kubectl delete service webapp
+                kubectl apply -f .
+                kubectl get svc
                 """
               }
               
