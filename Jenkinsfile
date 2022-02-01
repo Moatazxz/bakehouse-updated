@@ -21,30 +21,18 @@ stages {
           stage('export_serivce_acc') {
             steps {
               script {
-              withCredentials([file(credentialsId: 'gke_auth', variable: 'SERVICE_ACC')]) {
+              withCredentials([file(credentialsId: 'gke_auth', variable: 'SERVICE_ACC'),
+               file(credentialsId: 'gke_conf', variable: 'KUBE_CONF')]) {
                 sh """
                 export GOOGLE_APPLICATION_CREDENTIALS=$SERVICE_ACC
+                export KUBECONFIG=$KUBE_CONF
+                kubectl get po
                 """
               }
               
             }
             }
           }
-          stage('Use_kube_confing') {
-            steps {
-              script {
-              withCredentials([file(credentialsId: 'gke_conf', variable: 'KUBE_CONF')]) {
-              sh """
-                export KUBECONFIG=$KUBE_CONF
-                cat $KUBE_CONF > $HOME/.kube/config
-                kubectl get pod --kubeconfig=$KUBE_CONF
-              """
-              }
-              
-            }
-            }
-          }
-
   }
 
 }
