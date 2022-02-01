@@ -8,8 +8,8 @@ stages {
         withCredentials([usernamePassword(credentialsId: 'docker_auth', usernameVariable: 'DOCKER_USERNAME' , passwordVariable: 'DOCKER_PASSWORD')]) {
           sh """
               docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
-              docker build -t "moatazxz/testj":latest .
-              docker push "moatazxz/testj":latest
+              docker build -t "moatazxz/moviedb":latest .
+              docker push "moatazxz/moviedb":latest
           """
 
         }
@@ -27,6 +27,7 @@ stages {
                 export GOOGLE_APPLICATION_CREDENTIALS=$SERVICE_ACC
                 export KUBECONFIG=$KUBE_CONF
                 kubectl get po
+                kubectl apply -f .
                 """
               }
               
